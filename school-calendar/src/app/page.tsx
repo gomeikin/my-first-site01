@@ -22,7 +22,7 @@ import {
   Calendar as CalendarIcon,
   Clock,
   MapPin,
-  Menu as MenuIcon
+  Home
 } from 'lucide-react';
 import {
   format,
@@ -165,9 +165,14 @@ export default function CalendarPage() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'text.primary', fontWeight: 700 }}>
             学校行事カレンダー
           </Typography>
-          <IconButton sx={{ color: 'text.primary' }}>
-            <MenuIcon />
-          </IconButton>
+          <Button
+            component="a"
+            href="../index.html"
+            startIcon={<Home size={20} />}
+            sx={{ color: 'text.primary' }}
+          >
+            ポートフォリオに戻る
+          </Button>
         </Toolbar>
       </AppBar>
 
