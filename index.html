@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後 明均 先生のポートフォリオ</title>
+    <meta name="description" content="理科の教師、後 明均のポートフォリオサイトです。古物収集や科学への情熱を紹介します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>後 明均 先生のポートフォリオ</h1>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero.png'); background-size: cover; background-position: center;">
+            <h2>ようこそ</h2>
+            <p>知識と好奇心が交差する場所へ</p>
+        </section>
+
+        <section id="about" class="section">
+            <h3>自己紹介</h3>
+            <div class="profile-card">
+                <img src="profile.png" alt="後 明均" class="profile-img">
+                <div class="bio-text">
+                    <p><strong>後 明均 (Ushiro Akihito)</strong></p>
+                    <p>理科教育に情熱を注ぐ教育者です。自然界の不思議を解き明かす楽しさを生徒たちに伝えています。</p>
+                    <div class="interests">
+                        <span class="interest-tag">理科</span>
+                        <span class="interest-tag">古物収集</span>
+                        <span class="interest-tag">科学実験</span>
+                        <span class="interest-tag">歴史的逸品</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="section">
+            <h3>趣味・情熱</h3>
+            <p>私は古いもの、特に歴史を感じさせる「古物」を収集することに深い喜びを感じています。それらは過去の知恵や技術の結晶であり、現代の科学技術のルーツを教えてくれる貴重な存在です。</p>
+        </section>
+
+        <section id="vision" class="section">
+            <h3>メッセージ</h3>
+            <p>日常の中に隠れた科学を見つけ出し、新しい発見をする喜びを共に分かち合いましょう。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Akihito Ushiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll animation for potential links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.6s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
