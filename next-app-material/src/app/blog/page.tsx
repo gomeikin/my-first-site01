@@ -5,7 +5,7 @@ import {
     Box,
     Container,
     Typography,
-    Grid2 as Grid,
+    Grid,
     Card,
     CardContent,
     CardMedia,
@@ -90,6 +90,7 @@ export default function BlogList() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                style={{ height: '100%' }}
                             >
                                 <Card sx={{
                                     display: 'flex',

@@ -22,7 +22,15 @@ import {
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
-const postData = {
+interface PostDetails {
+    title: string;
+    date: string;
+    category: string;
+    image: string;
+    content: string;
+}
+
+const postData: Record<string, PostDetails> = {
     'science-experiment-01': {
         title: '身近な道具でできる！結晶作り実験のコツ',
         date: '2026.01.25',
@@ -59,8 +67,9 @@ const postData = {
 };
 
 export default function BlogPost() {
-    const { slug } = useParams();
-    const post = postData[slug as string] || postData['science-experiment-01'];
+    const params = useParams();
+    const slug = params?.slug as string;
+    const post = postData[slug] || postData['science-experiment-01'];
 
     return (
         <Box sx={{ bgcolor: 'background.paper', minHeight: '100vh' }}>
@@ -97,7 +106,7 @@ export default function BlogPost() {
                     </Box>
 
                     <Stack direction="row" alignItems="center" spacing={2}>
-                        <Avatar src="/profile.png" />
+                        <Avatar src="/profile.png" alt="後 明均" />
                         <Box>
                             <Typography variant="subtitle2" fontWeight="700">後 明均</Typography>
                             <Typography variant="caption" color="text.secondary">{post.date}</Typography>

@@ -5,7 +5,7 @@ import {
   Box,
   Container,
   Typography,
-  Grid2 as Grid,
+  Grid,
   Paper,
   Button,
   AppBar,
@@ -41,17 +41,17 @@ export default function Home() {
     {
       title: '理科教育の探求',
       description: '自然界の不思議を解き明かす楽しさを、実験や観察を通じて生徒たちに伝えています。',
-      icon: <BookOpen className="w-10 h-10 text-indigo-500" />
+      icon: <BookOpen size={40} style={{ color: '#6366f1' }} />
     },
     {
       title: '古物への情熱',
       description: '歴史を感じさせる「古物」の収集が趣味です。過去の技術から未来の科学を考えます。',
-      icon: <History className="w-10 h-10 text-pink-500" />
+      icon: <History size={40} style={{ color: '#ec4899' }} />
     },
     {
-      title: 'デジタルへの挑戦',
+      title: 'デジタルの挑戦',
       description: '最新のWeb技術（Next.js）を活用し、教育現場をより便利にするツールを自作しています。',
-      icon: <Lightbulb className="w-10 h-10 text-cyan-500" />
+      icon: <Lightbulb size={40} style={{ color: '#06b6d4' }} />
     }
   ];
 
@@ -105,6 +105,7 @@ export default function Home() {
           >
             <Avatar
               src="/profile.png"
+              alt="後 明均"
               sx={{ width: 120, height: 120, mx: 'auto', mb: 4, border: '4px solid white', boxShadow: theme.shadows[4] }}
             />
             <Box sx={{
@@ -140,9 +141,11 @@ export default function Home() {
               最新のデジタル技術で未来を築く。
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
-              <Button variant="contained" size="large" endIcon={<ArrowRight size={20} />} sx={{ py: 1.8, px: 5, borderRadius: 4, fontWeight: 700, fontSize: '1.1rem', boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.4)' }}>
-                プロジェクトを見る
-              </Button>
+              <Link href="/blog" passHref style={{ textDecoration: 'none' }}>
+                <Button variant="contained" size="large" endIcon={<ArrowRight size={20} />} sx={{ py: 1.8, px: 5, borderRadius: 4, fontWeight: 700, fontSize: '1.1rem', boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.4)' }}>
+                  ブログを見る
+                </Button>
+              </Link>
             </Box>
           </motion.div>
         </Container>
@@ -155,8 +158,9 @@ export default function Home() {
             <Grid size={{ xs: 12, md: 4 }} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
                 style={{ height: '100%' }}
               >
                 <Card sx={{
