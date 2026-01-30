@@ -69,8 +69,14 @@ export default function Home() {
             AKIHITO USHIRO
           </Typography>
           <Stack direction="row" spacing={1}>
-            <Button color="inherit" sx={{ fontWeight: 600 }}>About</Button>
-            <Button color="inherit" sx={{ fontWeight: 600 }}>Portfolio</Button>
+            <Button
+              component="a"
+              href="https://gomeikin.github.io/my-first-site01/"
+              color="inherit"
+              sx={{ fontWeight: 600 }}
+            >
+              メインサイトに戻る
+            </Button>
             <IconButton color="inherit">
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </IconButton>
