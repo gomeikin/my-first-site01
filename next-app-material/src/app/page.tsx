@@ -5,7 +5,7 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
+  Grid2 as Grid,
   Paper,
   Button,
   AppBar,
@@ -31,6 +31,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   const theme = useTheme();
@@ -75,8 +76,11 @@ export default function Home() {
               color="inherit"
               sx={{ fontWeight: 600 }}
             >
-              メインサイトに戻る
+              メインサイト
             </Button>
+            <Link href="/blog" passHref style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit" sx={{ fontWeight: 600 }}>Blog</Button>
+            </Link>
             <IconButton color="inherit">
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </IconButton>
