@@ -81,6 +81,9 @@ export default function Home() {
             <Link href="/blog" passHref style={{ textDecoration: 'none', color: 'inherit' }}>
               <Button color="inherit" sx={{ fontWeight: 600 }}>Blog</Button>
             </Link>
+            <Link href="/calendar" passHref style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit" sx={{ fontWeight: 600 }}>Calendar</Button>
+            </Link>
             <IconButton color="inherit">
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </IconButton>
